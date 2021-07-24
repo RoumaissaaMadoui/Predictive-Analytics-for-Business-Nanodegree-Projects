@@ -1,0 +1,468 @@
+<?xml version="1.0"?>
+<AlteryxDocument yxmdVer="2021.1">
+  <Nodes>
+    <Node ToolID="16">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+        <Position x="54" y="186" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Passwords />
+          <File OutputFileName="" FileFormat="19" SearchSubDirs="False" RecordLimit="">C:\Users\admin\Documents\GitHub\Predictive-Analytics-for-Business-Nanodegree-Projects\Project 6 - Combining Predictive Techniques\Output\Task 1 - Data for clustering.yxdb</File>
+          <FormatSpecificOptions />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>Task 1 - Data for clustering.yxdb</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Store" size="254" source="Summarize: GroupBy - Store" type="V_String" />
+            <Field name="Year" size="254" source="Summarize: GroupBy - Year" type="V_String" />
+            <Field name="Total_Sales" source="Formula: [Sum_Dry_Grocery]+[Sum_Dairy]+[Sum_Frozen_Food]+[Sum_Meat]+[Sum_Produce]+[Sum_Floral]+[Sum_Deli]+[Sum_Bakery]+[Sum_General_Merchandise]" type="Double" />
+            <Field name="Dry_Grocery_Percent" source="Formula: ([_CurrentField_]/[Total_Sales])*100" type="Double" />
+            <Field name="Dairy_Percent" source="Formula: ([_CurrentField_]/[Total_Sales])*100" type="Double" />
+            <Field name="Frozen_Food_Percent" source="Formula: ([_CurrentField_]/[Total_Sales])*100" type="Double" />
+            <Field name="Meat_Percent" source="Formula: ([_CurrentField_]/[Total_Sales])*100" type="Double" />
+            <Field name="Produce_Percent" source="Formula: ([_CurrentField_]/[Total_Sales])*100" type="Double" />
+            <Field name="Floral_Percent" source="Formula: ([_CurrentField_]/[Total_Sales])*100" type="Double" />
+            <Field name="Deli_Percent" source="Formula: ([_CurrentField_]/[Total_Sales])*100" type="Double" />
+            <Field name="Bakery_Percent" source="Formula: ([_CurrentField_]/[Total_Sales])*100" type="Double" />
+            <Field name="General_Merchandise_Percent" source="Formula: ([_CurrentField_]/[Total_Sales])*100" type="Double" />
+            <Field name="Address" size="254" source="File: C:\Users\admin\Documents\GitHub\Predictive-Analytics-for-Business-Nanodegree-Projects\Project 6 - Combining Predictive Techniques\Data\storeinformation.csv" type="V_String" />
+            <Field name="City" size="254" source="File: C:\Users\admin\Documents\GitHub\Predictive-Analytics-for-Business-Nanodegree-Projects\Project 6 - Combining Predictive Techniques\Data\storeinformation.csv" type="V_String" />
+            <Field name="State" size="254" source="File: C:\Users\admin\Documents\GitHub\Predictive-Analytics-for-Business-Nanodegree-Projects\Project 6 - Combining Predictive Techniques\Data\storeinformation.csv" type="V_String" />
+            <Field name="Zip" size="254" source="File: C:\Users\admin\Documents\GitHub\Predictive-Analytics-for-Business-Nanodegree-Projects\Project 6 - Combining Predictive Techniques\Data\storeinformation.csv" type="V_String" />
+            <Field name="Type" size="254" source="File: C:\Users\admin\Documents\GitHub\Predictive-Analytics-for-Business-Nanodegree-Projects\Project 6 - Combining Predictive Techniques\Data\storeinformation.csv" type="V_String" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+    </Node>
+    <Node ToolID="17">
+      <GuiSettings>
+        <Position x="222" y="102" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Value name="the fields">Dry_Grocery_Percent + Dairy_Percent + Frozen_Food_Percent + Meat_Percent + Produce_Percent + Floral_Percent + Deli_Percent + Bakery_Percent + General_Merchandise_Percent</Value>
+          <Value name="standardize">True</Value>
+          <Value name="z score">True</Value>
+          <Value name="unit interval">False</Value>
+          <Value name="k-means">True</Value>
+          <Value name="k-medians">False</Value>
+          <Value name="neural gas">False</Value>
+          <Value name="min clus">2</Value>
+          <Value name="max clus">8</Value>
+          <Value name="bootstrap rep">50</Value>
+          <Value name="num seeds">10</Value>
+          <Value name="inches">True</Value>
+          <Value name="in.w">5.50</Value>
+          <Value name="in.h">5.50</Value>
+          <Value name="centimeters">False</Value>
+          <Value name="cm.w">13.00</Value>
+          <Value name="cm.h">14.95</Value>
+          <Value name="graph.resolution">1x</Value>
+          <Value name="pointsize">10</Value>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings Macro="Predictive Tools\K-Centroids_Diagnostics.yxmc" />
+    </Node>
+    <Node ToolID="18">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+        <Position x="318" y="102" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <TempFile>C:\Users\admin\AppData\Local\Temp\Engine_2412_0de18af136d54b938cf84e5d985a2ea8_\Engine_1252_632d45e5e8df4a4aadcf80203d02ab62_.yxdb</TempFile>
+          <TempFileDataProfiling />
+          <Layout>
+            <ViewMode>Single</ViewMode>
+            <ViewSize value="100" />
+            <View1>
+              <DefaultTab>Report</DefaultTab>
+              <Hints>
+                <Table />
+              </Hints>
+            </View1>
+            <View2 />
+          </Layout>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+    </Node>
+    <Node ToolID="19">
+      <GuiSettings>
+        <Position x="222" y="294" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Value name="model name">ClusterStoreFormat</Value>
+          <Value name="the fields">Dry_Grocery_Percent + Dairy_Percent + Frozen_Food_Percent + Meat_Percent + Produce_Percent + Floral_Percent + Deli_Percent + Bakery_Percent + General_Merchandise_Percent</Value>
+          <Value name="standardize">True</Value>
+          <Value name="z score">True</Value>
+          <Value name="unit interval">False</Value>
+          <Value name="k-means">True</Value>
+          <Value name="k-medians">False</Value>
+          <Value name="neural gas">False</Value>
+          <Value name="num clus">3</Value>
+          <Value name="num seeds">10</Value>
+          <Value name="plot points">True</Value>
+          <Value name="plot centroids">False</Value>
+          <Value name="max comp">2</Value>
+          <Value name="inches">True</Value>
+          <Value name="in.w">5.50</Value>
+          <Value name="in.h">5.50</Value>
+          <Value name="centimeters">False</Value>
+          <Value name="cm.w">13.00</Value>
+          <Value name="cm.h">14.95</Value>
+          <Value name="graph.resolution">1x</Value>
+          <Value name="pointsize">10</Value>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="grp" size="1073741823" source="R-DATA:" type="V_WString" />
+            <Field name="out" size="1073741823" source="R-DATA:" type="V_WString" />
+          </RecordInfo>
+        </MetaInfo>
+        <MetaInfo connection="Reports">
+          <RecordInfo>
+            <Field name="Desc" size="64" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="Report" size="2147483647" source="Report: (Multiple Sources)" type="V_String" />
+            <Field name="Sum_Dists" size="1073741823" source="R-DATA:" type="V_WString" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings Macro="Predictive Tools\K-Centroids_Cluster_Analysis.yxmc" />
+    </Node>
+    <Node ToolID="21">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+        <Position x="318" y="306" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <TempFile>C:\Users\admin\AppData\Local\Temp\Engine_2412_0de18af136d54b938cf84e5d985a2ea8_\Engine_1252_016a3fc0d791436f8c3554a0abf11227_.yxdb</TempFile>
+          <TempFileDataProfiling />
+          <Layout>
+            <ViewMode>Single</ViewMode>
+            <ViewSize value="100" />
+            <View1>
+              <DefaultTab>Report</DefaultTab>
+              <Hints>
+                <Table />
+              </Hints>
+            </View1>
+            <View2 />
+          </Layout>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+    </Node>
+    <Node ToolID="22">
+      <GuiSettings>
+        <Position x="414" y="198" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Value name="clus name">Cluster</Value>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Store" size="1073741823" source="R-DATA:" type="V_WString" />
+            <Field name="Year" size="1073741823" source="R-DATA:" type="V_WString" />
+            <Field name="Total_Sales" source="R-DATA:" type="Double" />
+            <Field name="Dry_Grocery_Percent" source="R-DATA:" type="Double" />
+            <Field name="Dairy_Percent" source="R-DATA:" type="Double" />
+            <Field name="Frozen_Food_Percent" source="R-DATA:" type="Double" />
+            <Field name="Meat_Percent" source="R-DATA:" type="Double" />
+            <Field name="Produce_Percent" source="R-DATA:" type="Double" />
+            <Field name="Floral_Percent" source="R-DATA:" type="Double" />
+            <Field name="Deli_Percent" source="R-DATA:" type="Double" />
+            <Field name="Bakery_Percent" source="R-DATA:" type="Double" />
+            <Field name="General_Merchandise_Percent" source="R-DATA:" type="Double" />
+            <Field name="Address" size="1073741823" source="R-DATA:" type="V_WString" />
+            <Field name="City" size="1073741823" source="R-DATA:" type="V_WString" />
+            <Field name="State" size="1073741823" source="R-DATA:" type="V_WString" />
+            <Field name="Zip" size="1073741823" source="R-DATA:" type="V_WString" />
+            <Field name="Type" size="1073741823" source="R-DATA:" type="V_WString" />
+            <Field name="Cluster" source="R-DATA:" type="Int32" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings Macro="Predictive Tools\Append_Cluster.yxmc" />
+    </Node>
+    <Node ToolID="23">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileOutput.DbFileOutput">
+        <Position x="522" y="198" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <File FileFormat="19" MaxRecords="">C:\Users\admin\Documents\GitHub\Predictive-Analytics-for-Business-Nanodegree-Projects\Project 6 - Combining Predictive Techniques\Output\Task 1 - Store Format.yxdb</File>
+          <Passwords />
+          <FormatSpecificOptions>
+            <NoSpatialIndex>False</NoSpatialIndex>
+            <SaveSource>True</SaveSource>
+            <WriteCompatibleVersion>False</WriteCompatibleVersion>
+          </FormatSpecificOptions>
+          <MultiFile value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>Task 1 - Store Format.yxdb</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileOutput" />
+    </Node>
+    <Node ToolID="24">
+      <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
+        <Position x="162" y="54" width="168" height="36" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Text>Determine the appropriate number of clusters</Text>
+          <Font name="Arial" size="9.75" style="0" />
+          <TextColor name="Black" />
+          <FillColor name="White" />
+          <Shape shape="0" />
+          <Justification Justification="1" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="25">
+      <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
+        <Position x="390" y="150" width="120" height="36" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Text>Apply the model</Text>
+          <Font name="Arial" size="9.75" style="0" />
+          <TextColor name="Black" />
+          <FillColor name="White" />
+          <Shape shape="0" />
+          <Justification Justification="1" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="26">
+      <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
+        <Position x="174" y="246" width="120" height="36" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Text>Create the cluster model</Text>
+          <Font name="Arial" size="9.75" style="0" />
+          <TextColor name="Black" />
+          <FillColor name="White" />
+          <Shape shape="0" />
+          <Justification Justification="1" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="28">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileOutput.DbFileOutput">
+        <Position x="654" y="294" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <File MaxRecords="" FileFormat="0">C:\Users\admin\Documents\GitHub\Predictive-Analytics-for-Business-Nanodegree-Projects\Project 6 - Combining Predictive Techniques\Output\Task 1 - Store Format for Tableau.csv</File>
+          <Passwords />
+          <FormatSpecificOptions>
+            <LineEndStyle>CRLF</LineEndStyle>
+            <Delimeter>,</Delimeter>
+            <ForceQuotes>False</ForceQuotes>
+            <HeaderRow>True</HeaderRow>
+            <CodePage>28591</CodePage>
+            <WriteBOM>True</WriteBOM>
+          </FormatSpecificOptions>
+          <MultiFile value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>Task 1 - Store Format for Tableau.csv</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileOutput" />
+    </Node>
+    <Node ToolID="30">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="582" y="294" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="True" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="Country" selected="True" />
+            <SelectField field="State" selected="True" />
+            <SelectField field="City" selected="True" />
+            <SelectField field="Zip" selected="True" />
+            <SelectField field="Address" selected="True" />
+            <SelectField field="Store" selected="True" />
+            <SelectField field="Total_Sales" selected="True" />
+            <SelectField field="Cluster" selected="True" />
+            <SelectField field="Year" selected="False" />
+            <SelectField field="Dry_Grocery_Percent" selected="False" />
+            <SelectField field="Dairy_Percent" selected="False" />
+            <SelectField field="Frozen_Food_Percent" selected="False" />
+            <SelectField field="Meat_Percent" selected="False" />
+            <SelectField field="Produce_Percent" selected="False" />
+            <SelectField field="Floral_Percent" selected="False" />
+            <SelectField field="Deli_Percent" selected="False" />
+            <SelectField field="Bakery_Percent" selected="False" />
+            <SelectField field="General_Merchandise_Percent" selected="False" />
+            <SelectField field="Type" selected="False" />
+            <SelectField field="*Unknown" selected="False" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="31">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="510" y="294" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="&quot;United states&quot;" field="Country" size="1073741823" type="V_WString" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText><![CDATA[Country = "United states"
+]]></DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+  </Nodes>
+  <Connections>
+    <Connection>
+      <Origin ToolID="16" Connection="Output" />
+      <Destination ToolID="17" Connection="Data Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="16" Connection="Output" />
+      <Destination ToolID="19" Connection="Data Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="16" Connection="Output" />
+      <Destination ToolID="22" Connection="First Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="19" Connection="Output" />
+      <Destination ToolID="22" Connection="Second Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="17" Connection="Reports" />
+      <Destination ToolID="18" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="19" Connection="Reports" />
+      <Destination ToolID="21" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="22" Connection="Output" />
+      <Destination ToolID="23" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="22" Connection="Output" />
+      <Destination ToolID="31" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="30" Connection="Output" />
+      <Destination ToolID="28" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="31" Connection="Output" />
+      <Destination ToolID="30" Connection="Input" />
+    </Connection>
+  </Connections>
+  <Properties>
+    <Memory default="True" />
+    <GlobalRecordLimit value="0" />
+    <TempFiles default="True" />
+    <Annotation on="True" includeToolName="False" />
+    <ConvErrorLimit value="10" />
+    <ConvErrorLimit_Stop value="False" />
+    <CancelOnError value="False" />
+    <DisableBrowse value="False" />
+    <EnablePerformanceProfiling value="False" />
+    <DisableAllOutput value="False" />
+    <ShowAllMacroMessages value="False" />
+    <ShowConnectionStatusIsOn value="True" />
+    <ShowConnectionStatusOnlyWhenRunning value="True" />
+    <ZoomLevel value="0" />
+    <LayoutType>Horizontal</LayoutType>
+    <MetaInfo>
+      <NameIsFileName value="True" />
+      <Name>Task 1 - Determining Store Format for Existing Stores</Name>
+      <Description />
+      <RootToolName />
+      <ToolVersion />
+      <ToolInDb value="False" />
+      <CategoryName />
+      <SearchTags />
+      <Author />
+      <Company />
+      <Copyright />
+      <DescriptionLink actual="" displayed="" />
+      <Example>
+        <Description />
+        <File />
+      </Example>
+    </MetaInfo>
+    <Events>
+      <Enabled value="True" />
+    </Events>
+  </Properties>
+</AlteryxDocument>
